@@ -2,7 +2,7 @@
 
 This is a Dynamic Form Builder built using [Next.js](https://nextjs.org/), added with [**Chakra UI**](https://chakra-ui.com), [**TypeScript**](https://www.typescriptlang.org) and [**Mobx**](https://mobx.js.org/react-integration.html) developed by [**Michael Depp**](https://github.com/MichaelDepp). The project is live hosted at [**Vercel**](https://vercel.com)
 
-## 🏟️ Deployment Link
+## 🏟️ Deployed Link at Vercel
 
 [**https://dynamic-builder.vercel.app/**](https://dynamic-builder.vercel.app/)
 
@@ -71,11 +71,6 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
   <img width="200" alt="Screenshot 2021-09-08 at 4 10 45 PM" src="https://user-images.githubusercontent.com/11750694/132471682-1e29b354-10fb-441c-8e48-9bf6b4e1fbce.png">
 
 </p>
-
-
-
-
-
 
 ## 🎥 Screen Recording Of The Application
 
