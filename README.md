@@ -4,9 +4,7 @@ This is a Dynamic Form Builder built using [Next.js](https://nextjs.org/), added
 
 Hosted Link:
 
-```bash
 [**https://dynamic-builder.vercel.app/**](https://dynamic-builder.vercel.app/)
-```
 
 ## 🔋🙆‍♂️ Development Check
 
