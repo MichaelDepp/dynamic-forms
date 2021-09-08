@@ -25,7 +25,7 @@ import { Props } from "./props";
 
 const FormHandler: React.FC<Props> = (prop) => {
   const { fieldArray } = prop;
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const { isOpen, onOpen, onClose } = useDisclosure(); // for the modal hanlding
   const { register, handleSubmit } = useForm<formResponseArr>();
   const [responseData, setResponseData] = useState<responseMap[]>();
   const { colorMode } = useColorMode();
@@ -33,16 +33,18 @@ const FormHandler: React.FC<Props> = (prop) => {
 
   const renderFormItem = (items: formData[]) => {
     return _.map(items, (item, index) => {
-      let component;
+      let component; // initialise a let value since the values will be changed
 
       const { name, type } = item;
 
+      // using switch to conditionally render the formItem for the field
       switch (type) {
         case "textInput":
           component = (
             <div key={index}>
               <FormLabel mb={2}>{name}</FormLabel>
               <Input
+                // registers the form for the react form
                 {...register(`formResponse.${index}.value` as const)}
                 mb={4}
                 type={"text"}
@@ -125,6 +127,7 @@ const FormHandler: React.FC<Props> = (prop) => {
 
   const onActionSubmit = (data: formResponseArr) => {
     const { formResponse } = data;
+    // maps the data together with the field array to produce the response data
     const finalResponse = _.map(fieldArray, (field, index) => {
       return {
         name: field.name,
@@ -145,7 +148,7 @@ const FormHandler: React.FC<Props> = (prop) => {
           leftIcon={<RiCheckboxCircleFill />}
           colorScheme="teal"
           variant="solid">
-          Submit!
+          {"Submit!"}
         </Button>
       </form>
       <ResponseModal

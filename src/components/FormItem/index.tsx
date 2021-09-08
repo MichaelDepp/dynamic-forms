@@ -10,19 +10,16 @@ import {
 import { RiDeleteBin6Line } from "react-icons/ri";
 import _ from "lodash";
 import { optionsArr } from "constants/optionArray";
+import { formDataType } from "types/formArray";
 import { Props } from "./props";
-
-type formData = {
-  name: string;
-  value: string;
-};
 
 const FormItem: React.FC<Props> = (prop) => {
   const { item, index, register, onRemoveItem } = prop;
-  const { colorMode } = useColorMode();
-  const [notMobile] = useMediaQuery("(min-width: 780px)");
+  const { colorMode } = useColorMode(); // hanldes the app's color mode config
+  const [notMobile] = useMediaQuery("(min-width: 780px)"); // to check whether media width is mobile or not
 
-  const renderOptions = (opt: formData[]) => {
+  // render the options from the given option constant
+  const renderOptions = (opt: formDataType[]) => {
     return _.map(opt, (o, idx) => {
       const { name, value } = o;
       return (
@@ -33,6 +30,7 @@ const FormItem: React.FC<Props> = (prop) => {
     });
   };
 
+  // custom coloring according to the color mode
   const inputBorder = colorMode === "light" ? "#8895a7" : "#8895a7";
 
   return (
@@ -51,6 +49,7 @@ const FormItem: React.FC<Props> = (prop) => {
         <Box>
           <Input
             type={"text"}
+            // registers the form fielf for the react form
             {...register(`fieldArray.${index}.name` as const, {
               maxLength: 20
             })}
@@ -72,7 +71,7 @@ const FormItem: React.FC<Props> = (prop) => {
           </Select>
         </Box>
         <IconButton
-          onClick={() => onRemoveItem(index)}
+          onClick={() => onRemoveItem(index)} // triggers the remove item function
           variant="outline"
           size={notMobile ? "sm" : "md"}
           colorScheme="red"

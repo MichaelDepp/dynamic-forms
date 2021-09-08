@@ -17,20 +17,22 @@ import formsStore from "models/forms";
 
 const FormViewer = () => {
   const router = useRouter();
-  const { formId } = router.query;
+  const { formId } = router.query; // gets the form id param from the path query
   const [formData, setFormData] = useState<formList>();
   const { colorMode } = useColorMode();
 
   useEffect(() => {
     if (formId) {
+      // fetch the form based on the form id given
       const data = formsStore.getFormbyId(formId as string);
       setFormData(data);
     }
   }, [formId]);
 
   const title = _.get(formData, "title", "");
-  const fieldArray = _.get(formData, "fieldArray", []);
+  const fieldArray = _.get(formData, "fieldArray", []); // get the value from the data
 
+  // handles the empty forms
   if (_.size(fieldArray) < 1) {
     return (
       <Box my={[16, 10]} width="full" align="center">

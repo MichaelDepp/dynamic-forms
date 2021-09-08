@@ -23,8 +23,8 @@ const FormBuilder = () => {
     }
   });
   const { fields, append, remove } = useFieldArray({
-    control, // control props comes from useForm (optional: if you are using FormContext)
-    name: "fieldArray" // unique name for your Field Array
+    control,
+    name: "fieldArray"
   });
   const [formTitle, setFormTitle] = useState("");
   const { colorMode } = useColorMode();
@@ -38,32 +38,39 @@ const FormBuilder = () => {
     };
   });
 
+  // Watches the changes for the formTitle and update the state
   const onChangeFormTitle = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormTitle(e.target.value);
   };
 
+  // Triggeres when the add Form Element is clicked
   const onAddFormElement = () => {
-    append({});
+    append({}); // append will generate new array field in the react hook form fields
     toast({
+      // toast for success message
       title: `New Field Added!`,
       position: "top-right",
       status: "success",
       isClosable: true
     });
+    // updates the values in the mobX formArray model
     formsStore.formArray.fieldArray = controlledFields;
   };
 
+  // Triggeres everytime form item is removed
   const onRemoveItem = (index: number) => {
-    remove(index);
+    remove(index); // react form will remove the element from array
     toast({
       title: `Field Removed!`,
       position: "top-right",
       status: "warning",
       isClosable: true
     });
+    // updates the values in the mobX formArray model
     formsStore.formArray.fieldArray = controlledFields;
   };
 
+  // renders the form Item dynamically
   const renderFormItem = (items: formData[]) => {
     return _.map(items, (item, index) => (
       <FormItem
@@ -76,16 +83,18 @@ const FormBuilder = () => {
     ));
   };
 
+  // Triggeres when the onsubmit action is triggered
   const onActionSubmit = (data: formData[]) => {
     console.log(data);
-    const id = nanoid(10);
-    formsStore.formArray.fieldArray = controlledFields;
-    formsStore.formArray.id = id;
+    const id = nanoid(10); // generates an unique id for the new form
+    formsStore.formArray.fieldArray = controlledFields; // updates the formArray in the mobX model
+    formsStore.formArray.id = id; // add the infos to the formArray
     formsStore.formArray.title = formTitle;
-    formsStore.addForm();
-    router.push({ pathname: "/form", query: { formId: id } });
+    formsStore.addForm(); // add the new form to the formList array
+    router.push({ pathname: "/form", query: { formId: id } }); // redirects to the form view page and pass the required parameters
   };
 
+  // custom color to handle the  darkMode lightMode of the placeHolder
   const placeHolderColor = colorMode === "light" ? "#1b202b" : "#ecefee";
 
   return (
@@ -104,6 +113,7 @@ const FormBuilder = () => {
         />
       </Box>
       <form onSubmit={handleSubmit(onActionSubmit)}>
+        {/* renders the formItems using function */}
         {renderFormItem(controlledFields)}
         <Flex width={["full", "auto"]} justifyContent={["center", "left"]}>
           <Button
@@ -111,7 +121,7 @@ const FormBuilder = () => {
             leftIcon={<RiFileAddFill />}
             colorScheme="teal"
             variant="solid">
-            Add Form Item
+            {"Add Form Item"}
           </Button>
         </Flex>
         <Button
@@ -121,7 +131,7 @@ const FormBuilder = () => {
           leftIcon={<RiCheckboxCircleFill />}
           colorScheme="teal"
           variant="solid">
-          Done!
+          {"Done!"}
         </Button>
       </form>
     </Box>

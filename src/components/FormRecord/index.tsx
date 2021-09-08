@@ -27,10 +27,12 @@ const FormRecord: React.FC = observer(() => {
     }
   };
 
+  // removes the formArray from the form list in the mobX model
   const onRemoveForm = (id: string) => {
     formsStore.deleteFormbyId(id);
   };
 
+  // handles empty formList
   if (_.size(formsStore.formList) < 1) {
     return (
       <Box my={[24, 16]} width="full" align="center">
@@ -39,12 +41,9 @@ const FormRecord: React.FC = observer(() => {
           transition={{ repeat: Infinity, duration: 2, repeatType: "reverse" }}
           width={["100%", "70%"]}
           margin="0 auto">
-          <Image
-            src="/empty-folder.svg"
-            alt="Error 404 not found Illustration"
-          />
+          <Image src="/empty-folder.svg" alt="Error 404" />
           <Heading mt={4} fontSize="3xl" textAlign="center">
-            No Forms Found!
+            {"No Forms Found!"}
           </Heading>
         </MotionBox>
         <Box my={8}>

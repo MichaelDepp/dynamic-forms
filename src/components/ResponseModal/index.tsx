@@ -19,10 +19,11 @@ import { Props } from "./props";
 
 const ResponseModal: React.FC<Props> = (prop) => {
   const { isOpen, responseData, onClose } = prop;
-  const printRef = useRef<HTMLDivElement>(null);
+  const printRef = useRef<HTMLDivElement>(null); // ref to point when print pdf is triggered
   const { colorMode } = useColorMode();
   const bgColor = colorMode === "light" ? "#ffffff" : "#2c3848";
 
+  // renders the pdf from by passing the reference context
   const onDownloadPdf = useReactToPrint({
     content: () => printRef.current
   });
