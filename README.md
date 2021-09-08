@@ -1,6 +1,12 @@
 # Dynamic Form Builder ⚡
 
-This is a Dynamic Form Builder built using [Next.js](https://nextjs.org/), added with [**Chakra UI**](https://chakra-ui.com), [**TypeScript**](https://www.typescriptlang.org) and [**Mobx**](https://mobx.js.org/react-integration.html) developed by [**Michael Depp**](https://github.com/MichaelDepp)
+This is a Dynamic Form Builder built using [Next.js](https://nextjs.org/), added with [**Chakra UI**](https://chakra-ui.com), [**TypeScript**](https://www.typescriptlang.org) and [**Mobx**](https://mobx.js.org/react-integration.html) developed by [**Michael Depp**](https://github.com/MichaelDepp). The project is live hosted at [**Vercel**](https://vercel.com)
+
+Hosted Link:
+
+```bash
+[**https://dynamic-builder.vercel.app/**](https://dynamic-builder.vercel.app/)
+```
 
 ## 🔋🙆‍♂️ Development Check
 
@@ -10,6 +16,7 @@ This is a Dynamic Form Builder built using [Next.js](https://nextjs.org/), added
 - ✔️ Used MobX for the state management
 - ✔️ Used Prettier for strict code formatting
 - ✔️ Used ESLint for strict coding and committing
+- ✔️ Hosted the project in Vercel
 - ✔️ Fully Responsive to all media screen
 - ✔️ Dark Mode & Light Mode for better Ux
 - ✔️ Usage of modern react icons
