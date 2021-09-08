@@ -80,7 +80,7 @@ const FormRecord: React.FC = observer(() => {
               p={4}
               fontSize="2xl"
               fontWeight="bold">
-              {form.title ? form.title : form.id}
+              {form.title ? form.title : `Form-${index + 1}`}
             </Heading>
             <IconButton
               variant="outline"

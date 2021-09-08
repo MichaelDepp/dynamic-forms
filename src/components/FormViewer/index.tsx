@@ -65,7 +65,7 @@ const FormViewer = () => {
     <Box my={8} width="full" align="center">
       <Box width="full" pb={4} textAlign="left">
         <Heading fontSize="3xl" fontWeight="bold">
-          {title ? title : formId}
+          {title ? title : `Untitled Form`}
         </Heading>
       </Box>
       <FormHandler fieldArray={fieldArray} />
