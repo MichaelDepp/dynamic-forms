@@ -59,7 +59,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - Proper `error`, and missing info handling has done for the better UX
 - `DarkMode` and `lightMode` feature for better `UX`
 
-## 🎥 Screenshots
+## 📸 Screenshots
 
 <p align="center">
   <img width="200" alt="Screenshot 2021-09-08 at 4 00 38 PM" src="https://user-images.githubusercontent.com/11750694/132470839-744c7491-c834-4cd5-9b3c-4cf69d887c57.png">
