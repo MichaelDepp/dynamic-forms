@@ -3,6 +3,11 @@ export type formData = {
   type: string;
 };
 
+export type formDataType = {
+  name: string;
+  value: string;
+};
+
 export type formDataWithId = {
   id: string;
   name: string;
