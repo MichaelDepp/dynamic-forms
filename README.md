@@ -58,3 +58,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - The previously saved forms also can be deleted
 - Proper error, and missing info handling has done for the better UX
 - DarkMode and lightMode feature for better UX
+
+## 🎥 Screen Recording Of The Application
+[Video Preview - 1](https://drive.google.com/file/d/1y0IaYgAY7o7rI0hV0rdiSzW_0zjIG-4l/view?usp=sharing) 
+[Video Preview - 2](https://drive.google.com/file/d/1ylUK3vHyai9SHH0KV_ueGNGFhKRePZO_/view?usp=sharing) 
