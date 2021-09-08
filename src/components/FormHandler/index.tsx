@@ -49,7 +49,7 @@ const FormHandler: React.FC<Props> = (prop) => {
                 mb={4}
                 type={"text"}
                 borderColor={inputBorder}
-                placeholder="Field Name"
+                placeholder={name}
               />
             </div>
           );
@@ -98,7 +98,7 @@ const FormHandler: React.FC<Props> = (prop) => {
                 mb={4}
                 type={"email"}
                 borderColor={inputBorder}
-                placeholder="Field Name"
+                placeholder={"john@doe.com"}
               />
             </div>
           );
@@ -112,7 +112,7 @@ const FormHandler: React.FC<Props> = (prop) => {
                 mb={4}
                 type={"date"}
                 borderColor={inputBorder}
-                placeholder="Field Name"
+                placeholder={name}
               />
             </div>
           );
