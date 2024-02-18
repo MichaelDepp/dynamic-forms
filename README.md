@@ -21,6 +21,7 @@ This is a Dynamic Form Builder built using [Next.js](https://nextjs.org/), added
 
 ## Getting Started
 
+(Use node version 14)
 Clone this repository to your local:
 
 ```bash
