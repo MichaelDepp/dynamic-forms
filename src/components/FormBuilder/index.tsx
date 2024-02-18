@@ -95,7 +95,7 @@ const FormBuilder = () => {
   };
 
   // custom color to handle the  darkMode lightMode of the placeHolder
-  const placeHolderColor = colorMode === "light" ? "#1b202b" : "#ecefee";
+  const placeHolderColor = colorMode === "light" ? "#7e838f" : "#7e838f";
 
   return (
     <Box my={8} width="full" align="center">
